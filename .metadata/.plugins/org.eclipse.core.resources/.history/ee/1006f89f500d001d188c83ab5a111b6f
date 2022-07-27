@@ -1,0 +1,5 @@
+package com.npci.project.employee.dao;
+
+public interface EmployeeDAO {
+
+}

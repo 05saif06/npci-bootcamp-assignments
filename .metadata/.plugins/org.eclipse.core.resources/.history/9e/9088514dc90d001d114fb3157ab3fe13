@@ -1,0 +1,19 @@
+package com.npci.ecommerce.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ProductCategory")
+public class ProductCategory {
+	@Id
+	@Column(name ="categoryid")
+	private Integer categoryId;
+	@Column(name ="categoryname")
+	private String categoryName;
+	
+	
+
+}

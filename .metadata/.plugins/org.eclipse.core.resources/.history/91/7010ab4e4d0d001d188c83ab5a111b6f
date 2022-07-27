@@ -1,0 +1,33 @@
+package com.npci.project.employeentity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "Employee")
+public class Employee {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "EmpNo")
+	private int empNo;
+	@Column(name = "EmpName")
+	private String eName;
+	@Column(name = "Job")
+	private String job;
+	@Column(name = "HireDate")
+	private String hireDate;
+	@Column(name = "ManagerID")
+	private int managerId;
+	@Column(name = "Salary")
+	private int salary;
+	@Column(name = "Commision")
+	private int commission;
+	@Column(name = "DeptNo")
+	private int deptNo;
+	
+	
+
+}

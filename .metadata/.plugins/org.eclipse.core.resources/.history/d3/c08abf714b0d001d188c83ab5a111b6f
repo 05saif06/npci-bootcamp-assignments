@@ -1,0 +1,30 @@
+package com.npci.project.employeentity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "employee")
+public class Employee {
+	@Id()
+	@Column(name = "empno")
+	private int empNo;
+	@Column(name = "empno")
+	private String eName;
+	@Column(name = "empno")
+	private String job;
+	@Column(name = "empno")
+	private String hireDate;
+	@Column(name = "empno")
+	private int managerId;
+	@Column(name = "empno")
+	private int salary;
+	@Column(name = "empno")
+	private int commission;
+	@Column(name = "empno")
+	private int deptNo;
+	
+	
+
+}

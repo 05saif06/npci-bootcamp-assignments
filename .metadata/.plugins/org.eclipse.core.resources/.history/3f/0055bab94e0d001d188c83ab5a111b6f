@@ -1,0 +1,120 @@
+package com.npci.project.employeentity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Employee")
+public class Employee {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "EmpNo")
+	private int empNo;
+	@Column(name = "EmpName")
+	private String eName;
+	@Column(name = "Job")
+	private String job;
+	@Column(name = "HireDate")
+	private String hireDate;
+	@Column(name = "ManagerID")
+	private int managerId;
+	@Column(name = "Salary")
+	private int salary;
+	@Column(name = "Commision")
+	private int commission;
+	@Column(name = "DeptNo")
+	private int deptNo;
+
+	public Employee() {
+
+	}
+
+	public Employee(int empNo, String eName, String job, String hireDate, int managerId, int salary, int commission,
+			int deptNo) {
+		super();
+		this.empNo = empNo;
+		this.eName = eName;
+		this.job = job;
+		this.hireDate = hireDate;
+		this.managerId = managerId;
+		this.salary = salary;
+		this.commission = commission;
+		this.deptNo = deptNo;
+	}
+
+	public int getEmpNo() {
+		return empNo;
+	}
+
+	public void setEmpNo(int empNo) {
+		this.empNo = empNo;
+	}
+
+	public String geteName() {
+		return eName;
+	}
+
+	public void seteName(String eName) {
+		this.eName = eName;
+	}
+
+	public String getJob() {
+		return job;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
+
+	public String getHireDate() {
+		return hireDate;
+	}
+
+	public void setHireDate(String hireDate) {
+		this.hireDate = hireDate;
+	}
+
+	public int getManagerId() {
+		return managerId;
+	}
+
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public int getCommission() {
+		return commission;
+	}
+
+	public void setCommission(int commission) {
+		this.commission = commission;
+	}
+
+	public int getDeptNo() {
+		return deptNo;
+	}
+
+	public void setDeptNo(int deptNo) {
+		this.deptNo = deptNo;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empNo=" + empNo + ", eName=" + eName + ", job=" + job + ", hireDate=" + hireDate
+				+ ", managerId=" + managerId + ", salary=" + salary + ", commission=" + commission + ", deptNo="
+				+ deptNo + "]";
+	}
+
+}

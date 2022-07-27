@@ -1,0 +1,120 @@
+package com.npci.project.employe.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Employee")
+public class Employee {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "EmpNo")
+	private Integer EmpNo;
+	@Column(name = "EmpName")
+	private String EmpName;
+	@Column(name = "Job")
+	private String Job;
+	@Column(name = "HireDate")
+	private String HireDate;
+	@Column(name = "ManagerID")
+	private Integer ManagerID;
+	@Column(name = "Salary")
+	private Integer Salary;
+	@Column(name = "Commision")
+	private Integer Commision;
+	@Column(name = "DeptNo")
+	private Integer DeptNo;
+
+	public Employee() {
+
+	}
+
+	public Employee(Integer empNo, String empName, String job, String hireDate, Integer managerID, Integer salary,
+			Integer commision, Integer deptNo) {
+		super();
+		EmpNo = empNo;
+		EmpName = empName;
+		Job = job;
+		HireDate = hireDate;
+		ManagerID = managerID;
+		Salary = salary;
+		Commision = commision;
+		DeptNo = deptNo;
+	}
+
+	public Integer getEmpNo() {
+		return EmpNo;
+	}
+
+	public void setEmpNo(Integer empNo) {
+		EmpNo = empNo;
+	}
+
+	public String getEmpName() {
+		return EmpName;
+	}
+
+	public void setEmpName(String empName) {
+		EmpName = empName;
+	}
+
+	public String getJob() {
+		return Job;
+	}
+
+	public void setJob(String job) {
+		Job = job;
+	}
+
+	public String getHireDate() {
+		return HireDate;
+	}
+
+	public void setHireDate(String hireDate) {
+		HireDate = hireDate;
+	}
+
+	public Integer getManagerID() {
+		return ManagerID;
+	}
+
+	public void setManagerID(Integer managerID) {
+		ManagerID = managerID;
+	}
+
+	public Integer getSalary() {
+		return Salary;
+	}
+
+	public void setSalary(Integer salary) {
+		Salary = salary;
+	}
+
+	public Integer getCommision() {
+		return Commision;
+	}
+
+	public void setCommision(Integer commision) {
+		Commision = commision;
+	}
+
+	public Integer getDeptNo() {
+		return DeptNo;
+	}
+
+	public void setDeptNo(Integer deptNo) {
+		DeptNo = deptNo;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [EmpNo=" + EmpNo + ", EmpName=" + EmpName + ", Job=" + Job + ", HireDate=" + HireDate
+				+ ", ManagerID=" + ManagerID + ", Salary=" + Salary + ", Commision=" + Commision + ", DeptNo=" + DeptNo
+				+ "]";
+	}
+
+}

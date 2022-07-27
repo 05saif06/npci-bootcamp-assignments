@@ -1,0 +1,5 @@
+package com.npci.project.employeetable;
+
+public class Employee {
+
+}

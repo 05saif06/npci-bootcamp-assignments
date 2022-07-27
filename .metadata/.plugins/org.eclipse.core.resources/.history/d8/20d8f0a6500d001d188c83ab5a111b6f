@@ -1,0 +1,9 @@
+package com.npci.project.employee.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.npci.project.employe.entity.Employee;
+
+public interface EmployeeDAO extends JpaRepository<Employee, Integer>{
+
+}

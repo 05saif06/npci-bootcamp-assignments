@@ -1,0 +1,5 @@
+package com.npci.ecommerce.entity;
+
+public class ProductCategory {
+
+}

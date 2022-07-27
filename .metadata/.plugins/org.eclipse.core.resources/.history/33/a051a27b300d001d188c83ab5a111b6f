@@ -1,0 +1,37 @@
+package mankatha;
+
+import java.util.*;
+
+public class Decks {
+
+	List<Cards> cardsOfMankatha;
+
+	public Decks() {
+		setCards();
+	}
+
+	protected List<Cards> getCards() {
+		return cardsOfMankatha;
+	}
+
+	protected void setCards() {
+		List<Cards> addCards = new ArrayList<Cards>();
+		for (int p = 1; p < 14; p++) {
+			for (int q = 1; q < 5; q++) {
+				addCards.add(new Cards(p, q));
+			}
+		}
+		this.cardsOfMankatha = addCards;
+	}
+
+	public List<Cards> shuffle() {
+		List<Cards> shuffledCards = new ArrayList<Cards>(getCards());
+		Collections.shuffle(shuffledCards);
+		return shuffledCards;
+	}
+
+	public Cards deal(List<Cards> cards) {
+		return cards.remove(0);
+	}
+
+}

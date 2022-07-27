@@ -1,0 +1,5 @@
+package com.npci.project.employee.repository;
+
+public class EmployeeRepositoryImpl {
+
+}

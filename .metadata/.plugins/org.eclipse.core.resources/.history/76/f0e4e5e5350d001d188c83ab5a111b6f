@@ -1,0 +1,5 @@
+package com.dependency.DependencyInjection;
+@Component(value = "lion")
+public class Lion {
+
+}

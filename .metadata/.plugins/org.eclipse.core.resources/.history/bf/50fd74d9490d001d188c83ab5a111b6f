@@ -1,0 +1,5 @@
+package com.npci.project.employeentity;
+
+public class Employee {
+
+}

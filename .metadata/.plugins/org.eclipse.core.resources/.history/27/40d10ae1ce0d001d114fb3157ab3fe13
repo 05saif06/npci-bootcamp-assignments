@@ -1,0 +1,62 @@
+package com.npci.ecommerce.service;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.hibernate.Session;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.npci.ecommerce.entity.Product;
+
+@Service
+public class ProductServiceImpl implements IProductService{
+	@Autowired
+	private EntityManager entityManager;
+
+	@Override
+	public List<Product> findAll() {
+		// TODO Auto-generated method stub
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query<Product> query = currentSession.createQuery("select e from Product e", Product.class);
+		List<Product> productList = query.getResultList();
+		return productList;
+	}
+
+	@Override
+	public Product findByProductId(int id) {
+		// TODO Auto-generated method stub
+		Session currentSession = entityManager.unwrap(Session.class);
+		return currentSession.get(Product.class, id);
+	}
+
+	@Override
+	public void saveProductDetails(Product product) {
+		// TODO Auto-generated method stub
+		Session currentSession = entityManager.unwrap(Session.class);
+		currentSession.save(product);
+		
+	}
+
+	@Override
+	public void updateProductDetails(Product product) {
+		// TODO Auto-generated method stub
+		Session currentSession = entityManager.unwrap(Session.class);
+		currentSession.saveOrUpdate(product);
+		
+		
+	}
+
+	@Override
+	public void deleteProductDetails(Product product) {
+		// TODO Auto-generated method stub
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query<Product> query = currentSession.createQuery("delete  from Employee  where empno = :employeeId");
+		query.setParameter("employeeId", product);
+		query.executeUpdate();
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.npci.project.employee.repository;
+
+import java.util.List;
+
+import com.npci.project.employe.entity.Employee;
+
+public interface IEmployeeRepository {
+	
+	public List<Employee> findAll();
+
+}
