@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<title>Employee Information </title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th,
+		td {
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2
+		}
+
+		th {
+			background-color: rgb(0, 0, 0);
+			color: white;
+		}
+
+		.button {
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button1 {
+			background-color: rgb(0, 0, 0);
+		}
+
+		/* Green */
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div><a th:href="@{/api/addEmployee}" <button class="button button1"></button>Add New Employee</a>
+		</div>
+		&nbsp;
+		<table class="table table-bordered">
+			<tr>
+				<th> ID </th>
+				<th> Employee Name </th>
+				<th> JOB </th>
+				<th> HireDate </th>
+				<th> MANAGER ID </th>
+				<th> Salary </th>
+				<th> COMISSION </th>
+				<th> DEPARTMENT </th>
+				<th> ACTION  </th>
+			</tr>
+
+			<tr th:each="emp : ${EMPLOYEE}">
+				<td th:text="${emp.empNo}" />
+				<td th:text="${emp.eName}" />
+				<td th:text="${emp.job}" />
+				<td th:text="${emp.hireDate}" />
+				<td th:text="${emp.managerId}" />
+				<td th:text="${emp.salary}" />
+				<td th:text="${emp.commission}" />
+				<td th:text="${emp.deptNo}" />
+				<td>
+				<a th:href="@{/api/updateForm(empId = ${emp.empNo})}" class="btn btn-info btn-sm">Update</a>
+				&nbsp;
+				<a th:href="@{/api/deleteForm(empId = ${emp.empNo})}" class="btn btn-danger btn-sm"
+				onclick="if(!(confirm('Are You Confirm to Delete this Employees'))) return false">Delete</a>
+				</td>
+			</tr>
+
+		</table>
+	</div>
+</body>
+
+</html>

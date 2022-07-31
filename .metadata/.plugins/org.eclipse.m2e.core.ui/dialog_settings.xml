@@ -67,6 +67,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\localadmin\Downloads\EcommerceRestApiNew"/>
 			<item value="C:\Users\localadmin\Downloads\guidedassignment"/>
 		</list>
 		<list key="projectNameTemplate">
